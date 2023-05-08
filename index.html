@@ -1,5 +1,49 @@
 ---
 layout: default
 title: Homepage
+news:
+    - title: Big Sale
+      description: Exciting things are happening!
+      date: January 13, 2023
+      category: Promo
+      url: https://www.google.com
+    - title: New Puppy
+      description: Tiny baby puppy alert
+      date: February 13, 2023
+      category: Puppy
+      url: https://www.google.com
+    - title: Travel Blog
+      description: Heading to Mexico next week!
+      date: May 13, 2023
+      category: Travel
+      url: https://www.google.com
+    - title: Spring Cleaning
+      description: Take your cleaning to the next level
+      date: June 13, 2023
+      category: Home and Lifestyle
+      url: https://www.google.com
 ---
-<h1>Welcome to your homepage!</h1>
+
+
+<section class="grid-spaceBetween padded bg-featured latest-news mob-pad-0">
+    
+    {% for item in page.news %}
+    <!--  First Card  -->
+      <div class="col-3_xs-8">
+        <div class="card">
+            <div class="bg-image portrait">
+                <span> {{item.category}} </span>
+            </div>
+
+            <div class="post-info">
+                <p class="date"> {{item.date}} </p>
+                <h3> {{item.title}} </h3>
+                <p> {{item.description}} </p>
+                <a href="{{item.url}}">Find out more &nbsp &#10141; </a>
+            </div>
+        </div>
+      </div>
+    {% endfor %}
+</section>
+  
+  
